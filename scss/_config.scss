@@ -1,0 +1,35 @@
+$primary-color: #444;
+$secondary-color: #eece1c;
+$show-home-image: true;
+$home-image:url(../Images/background.jpg);
+$background-opacity: 0.9;
+
+//function to change the anything in 0.7sec
+@mixin easeOut{
+    transition: all 0.7s ease-out;
+}
+
+// function for the background
+@mixin background{
+    @if $show-home-image{
+        &#bg-image{
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
+
+            // to make the text readable
+            // sudo element after the element above
+            // content is needed to activate sudo element
+            &:after{
+                content:"";
+                z-index: -2;
+                position: absolute;
+                top: 0;
+                right:0;
+                width: 100%;
+                height: 100%;
+                background: rgba($primary-color,$background-opacity);
+            }
+        }
+    }
+}
