@@ -91,47 +91,18 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .LS-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  ul.menu-nav, div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show, div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px; }
-  .menu-branding {
-    height: 30vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-branding .portrait {
-      background: url("../Images/Portfolio_smaller.jpg");
-      width: 150px;
-      height: 150px; } }
-
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; } }
-
 * {
   box-sizing: border-box; }
 
 body {
   background: #444;
-  color: #ffffff;
+  color: white;
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-image {
-    background: url(../Images/background.jpg);
+    background: url("https://source.unsplash.com/1080x900/?computer");
     background-attachment: fixed;
     background-size: cover; }
     body#bg-image:after {
@@ -180,3 +151,65 @@ main {
       main .icon a:hover {
         color: #eece1c;
         transition: all 0.7s ease-out; }
+
+.about_infomation {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "bio-image bio bio" "num1 num2 num3";
+  grid-template-columns: repeat(3, 1fr); }
+
+.bio-image {
+  grid-area: bio-image;
+  margin: auto;
+  border-radius: 10%;
+  border: #eece1c 3px solid; }
+
+.bio {
+  grid-area: bio;
+  font-size: 1.5rem; }
+
+.num1 {
+  grid-area: num1; }
+
+.num2 {
+  grid-area: num2; }
+
+.num3 {
+  grid-area: num3; }
+
+.project {
+  background: #515151;
+  padding: 15px;
+  border-left: #eece1c 3px solid; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .LS-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show, div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 30vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../Images/Portfolio_smaller.jpg");
+      width: 150px;
+      height: 150px; }
+  .about_infomation {
+    grid-template-areas: "bio-image" "bio" "num1" "num2" "num3";
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }

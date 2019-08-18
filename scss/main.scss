@@ -1,6 +1,6 @@
 @import "config";
 @import "menu";
-@import "mobile";
+
 
 // selecting everything
 // making sure that the padding will not effect the size
@@ -12,7 +12,7 @@
 body{
     @include background;
     background: $primary-color;
-    color:  #ffffff;
+    color: change-color($primary-color);
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -75,3 +75,45 @@ main{
         }
     }
 }
+
+// using grid css to map out the locations
+
+.about_infomation{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: 
+        "bio-image bio bio"
+        "num1 num2 num3";
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.bio-image{
+    grid-area: bio-image;
+    margin: auto;
+    border-radius: 10%;
+    border: $secondary-color 3px solid;
+}
+
+.bio{
+    grid-area: bio;
+    font-size: 1.5rem;
+}
+
+.num1{
+    grid-area: num1;
+}
+
+.num2{
+    grid-area: num2;
+}
+
+.num3{
+    grid-area: num3;
+}
+
+.project{
+    background: lighten($color: $primary-color, $amount: 5);
+    padding: 15px;
+    border-left: $secondary-color 3px solid;
+}
+@import "mobile";

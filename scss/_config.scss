@@ -1,7 +1,8 @@
 $primary-color: #444;
 $secondary-color: #eece1c;
 $show-home-image: true;
-$home-image:url(../Images/background.jpg);
+// used unsplash API to get computer theme photos
+$home-image:url("https://source.unsplash.com/1080x900/?computer");
 $background-opacity: 0.9;
 
 //function to change the anything in 0.7sec
@@ -31,6 +32,15 @@ $background-opacity: 0.9;
                 background: rgba($primary-color,$background-opacity);
             }
         }
+    }
+}
+
+// setting the text color
+@function change-color($color){
+    @if (lightness($color) > 40) {
+        @return black;        
+    }@else{
+        @return white;
     }
 }
 
